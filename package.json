@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18", 
+    "@heroicons/react": "^2.0.18",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "aos": "^2.3.4",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.1.0",
