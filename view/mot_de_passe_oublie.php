@@ -1,4 +1,3 @@
-```php
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
@@ -80,4 +79,3 @@
     </div>
 </body>
 </html>
-```
