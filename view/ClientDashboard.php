@@ -23,6 +23,7 @@
                 <div class="flex items-center justify-between">
                     <a href="index.php" class="flex items-center">
                         <img src="../img/logo3.jpg" alt="Maboum School" class="h-12">
+                        <span class="text-white text-xl font-bold ml-3">Maboum School</span>
                     </a>
                     <div class="flex items-center space-x-4">
                         <a href="mot_de_passe_oublie.php" class="text-white hover:text-secondary-200 transition">

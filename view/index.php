@@ -16,6 +16,7 @@
             <div class="flex items-center justify-between">
                 <a href="/" class="flex items-center">
                     <img src="../img/logo3.jpg" alt="Maboum School" class="h-12">
+                    <span class="text-white text-xl font-bold ml-3">Maboum School</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#qui-sommes-nous" class="text-white hover:text-accent transition">Qui sommes-nous</a>
