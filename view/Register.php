@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Maboum School</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="../dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-sans">
     <div class="min-h-screen flex flex-col">
         <!-- Header -->
-        <header class="bg-primary-900 text-white">
+        <header class="bg-primary-900 text-white fixed w-full z-50">
             <nav class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <a href="index.php" class="flex items-center">
@@ -25,7 +25,7 @@
         </header>
 
         <!-- Main Content -->
-        <main class="flex-grow container mx-auto px-4 py-12">
+        <main class="flex-grow container mx-auto px-4 py-12 pt-28">
             <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
                 <h1 class="text-3xl font-bold text-primary-900 text-center mb-8">Inscription</h1>
 

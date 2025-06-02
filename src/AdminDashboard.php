@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration - Maboum School</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="../dist/output.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-sans">
     <div class="min-h-screen flex flex-col">
         <!-- Header -->
-        <header class="bg-primary-900 text-white">
+        <header class="bg-primary-900 text-white fixed w-full z-50">
             <nav class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <a href="../view/index.php" class="flex items-center">
                         <img src="../img/logo3.jpg" alt="Maboum School" class="h-12">
+                        <span class="text-white text-xl font-bold ml-3">Maboum School</span>
                     </a>
                     <div class="flex items-center space-x-4">
                         <a href="../src/Logout.php" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
@@ -28,7 +29,7 @@
         </header>
 
         <!-- Main Content -->
-        <main class="flex-grow container mx-auto px-4 py-8">
+        <main class="flex-grow container mx-auto px-4 py-8 pt-28">
             <div class="flex justify-between items-center mb-8">
                 <h1 class="text-3xl font-bold text-primary-900">Tableau de bord administrateur</h1>
                 <button type="button" data-bs-toggle="modal" data-bs-target="#addNewUserModal"

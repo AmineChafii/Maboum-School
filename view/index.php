@@ -5,13 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maboum School - Excellence Académique</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="../dist/output.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .section-spacing {
+            margin-bottom: 4rem;
+        }
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
 </head>
 <body class="bg-white font-sans">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-primary-800 to-primary-900 fixed w-full z-50">
+    <header class="sticky-header bg-gradient-to-r from-primary-800 to-primary-900">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="/" class="flex items-center">
@@ -19,13 +36,32 @@
                     <span class="text-white text-xl font-bold ml-3">Maboum School</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#qui-sommes-nous" class="text-white hover:text-accent transition">Qui sommes-nous</a>
-                    <a href="#nos-campus" class="text-white hover:text-accent transition">Nos campus</a>
-                    <a href="#nos-cours" class="text-white hover:text-accent transition">Nos cours</a>
-                    <a href="#notre-experience" class="text-white hover:text-accent transition">Notre expérience</a>
-                    <a href="#contact" class="text-white hover:text-accent transition">Contact</a>
+                    <a href="#qui-sommes-nous" class="text-white hover:text-secondary-200 transition">Qui sommes-nous</a>
+                    <a href="#nos-campus" class="text-white hover:text-secondary-200 transition">Nos campus</a>
+                    <a href="#nos-cours" class="text-white hover:text-secondary-200 transition">Nos cours</a>
+                    <a href="#notre-experience" class="text-white hover:text-secondary-200 transition">Notre expérience</a>
+                    <a href="#contact" class="text-white hover:text-secondary-200 transition">Contact</a>
                     <a href="Register.php" class="text-white hover:text-secondary-200 transition">Inscription</a>
                     <a href="Login.php" class="bg-secondary-600 text-white px-6 py-2 rounded-full hover:bg-secondary-700 transition">Connexion</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#qui-sommes-nous" class="text-white hover:text-secondary-200 transition">Qui sommes-nous</a>
+                    <a href="#nos-campus" class="text-white hover:text-secondary-200 transition">Nos campus</a>
+                    <a href="#nos-cours" class="text-white hover:text-secondary-200 transition">Nos cours</a>
+                    <a href="#notre-experience" class="text-white hover:text-secondary-200 transition">Notre expérience</a>
+                    <a href="#contact" class="text-white hover:text-secondary-200 transition">Contact</a>
+                    <a href="Register.php" class="text-white hover:text-secondary-200 transition">Inscription</a>
+                    <a href="Login.php" class="bg-secondary-600 text-white px-4 py-2 rounded-full hover:bg-secondary-700 transition inline-block w-max">Connexion</a>
                 </div>
             </div>
         </nav>
@@ -36,11 +72,11 @@
         <div class="container mx-auto px-6 py-24">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h1 class="text-5xl font-bold text-white leading-tight mb-6">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                         Vous avez des difficultés scolaires ?<br>
                         Nous sommes là pour vous !
                     </h1>
-                    <p class="text-xl text-secondary-200 mb-8">
+                    <p class="text-lg md:text-xl text-secondary-200 mb-8">
                         Choisissez la matière pour des cours particuliers et programmez votre rendez-vous.
                     </p>
                     <a href="#nos-cours" class="inline-block bg-secondary-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary-700 transition">
@@ -55,27 +91,27 @@
     </section>
 
     <!-- Section Qui sommes-nous -->
-    <section id="qui-sommes-nous" class="py-20 bg-gray-50">
+    <section id="qui-sommes-nous" class="py-20 bg-gray-50 section-spacing">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
                     <img src="../img/quisommesnous.jpg" alt="À propos de nous" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <h2 class="text-4xl font-bold text-primary-900 mb-6">QUI SOMMES-NOUS ?</h2>
-                    <p class="text-gray-600 mb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-6">QUI SOMMES-NOUS ?</h2>
+                    <p class="text-gray-700 mb-6">
                         Maboum School est une enseigne qui donne des cours de soutien. Basé sur Lille / Valenciennes / Roubaix / Tourcoing / Hazebrouck / Dubaï nous proposons des cours de soutien hebdomadaires, des stages intensifs et de l'orientation.
                     </p>
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-700 mb-6">
                         Chez Maboum School, l'avenir de votre enfant est notre priorité. À chaque vacances scolaires, nos professeurs de l'Éducation Nationale organisent des stages pour permettre à votre enfant de se remettre à niveau, de ne pas perdre le rythme de l'école, combler les lacunes mais aussi de s'avancer sur ses devoirs.
                     </p>
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-700 mb-6">
                         Mais ce n'est pas tout Maboum School propose d'autres services comme la mise à disposition d'espace de co-learning afin que les élèves puissent profiter de l'espace pour travailler en autonomie.
                     </p>
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-700 mb-6">
                         Nos équipes assurent un acompagnemet scolaire et établissent un bilan des compétences pour accompagner au mieux votre enfant afin de construire un projet d'évolution professionnelle.
                     </p>
-                    <p class="text-gray-600">
+                    <p class="text-gray-700">
                         Personnalisés ou collectifs, Maboum Scolaire propose aussi des cours de soutien hebdomadaire permettant aux élèves de travailler les difficultés rencontrées à l'école.
                     </p>
                 </div>
@@ -84,15 +120,15 @@
     </section>
 
     <!-- Section Nos Campus -->
-    <section id="nos-campus" class="py-20">
+    <section id="nos-campus" class="py-20 section-spacing">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-primary-900 mb-12">Nos Campus</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12">Nos Campus</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
                     <img src="../img/Lille.jpg" alt="Campus Lille" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary-900 mb-2">LILLE</h3>
-                        <p class="text-gray-600">15 RUE JACQUEMARS GIÉLÉE</p>
+                        <p class="text-gray-700">15 RUE JACQUEMARS GIÉLÉE</p>
                     </div>
                 </div>
                 
@@ -100,7 +136,7 @@
                     <img src="../img/Valenciennes.jpg" alt="Campus Valenciennes" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary-900 mb-2">VALENCIENNES</h3>
-                        <p class="text-gray-600">84 RUE DE PARIS</p>
+                        <p class="text-gray-700">84 RUE DE PARIS</p>
                     </div>
                 </div>
 
@@ -108,7 +144,7 @@
                     <img src="../img/Hazebrouck.jpg" alt="Campus Hazebrouck" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary-900 mb-2">HAZEBROUCK</h3>
-                        <p class="text-gray-600">50 RUE DE LA CLEF</p>
+                        <p class="text-gray-700">50 RUE DE LA CLEF</p>
                     </div>
                 </div>
 
@@ -116,7 +152,7 @@
                     <img src="../img/Tourcoing.png" alt="Campus Tourcoing" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary-900 mb-2">TOURCOING</h3>
-                        <p class="text-gray-600">25 RUE DE LILLE</p>
+                        <p class="text-gray-700">25 RUE DE LILLE</p>
                     </div>
                 </div>
 
@@ -124,7 +160,7 @@
                     <img src="../img/Roubaix.jpg" alt="Campus Roubaix" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary-900 mb-2">ROUBAIX</h3>
-                        <p class="text-gray-600">69 RUE JULES WATTEEUW</p>
+                        <p class="text-gray-700">69 RUE JULES WATTEEUW</p>
                     </div>
                 </div>
 
@@ -132,7 +168,7 @@
                     <img src="../img/Dubai.jpg" alt="Campus Dubai" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary-900 mb-2">DUBAÏ</h3>
-                        <p class="text-gray-600">ATELIER BUSINESS CENER-AL AMERI TOWER 19TH FLOOR-BARSHA HEIGHTS</p>
+                        <p class="text-gray-700">ATELIER BUSINESS CENER-AL AMERI TOWER 19TH FLOOR-BARSHA HEIGHTS</p>
                     </div>
                 </div>
             </div>
@@ -140,22 +176,22 @@
     </section>
 
     <!-- Section Nos Cours -->
-    <section id="nos-cours" class="py-20 bg-gray-50">
+    <section id="nos-cours" class="py-20 bg-gray-50 section-spacing">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-primary-900 mb-12">Nos Cours</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12">Nos Cours</h2>
             
             <!-- Stages Intensifs -->
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-12" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-16" data-aos="fade-up">
                 <div class="md:w-1/2">
                     <img src="../img/stage-intensif.png" alt="Stages intensifs" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2">
                     <div class="flex items-center mb-2">
-                        <h3 class="text-3xl font-bold text-gray-900">Stages</h3>
-                        <h3 class="text-3xl font-bold text-primary-600 ml-2">Intensifs</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Stages</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary-600 ml-2">Intensifs</h3>
                     </div>
                     <h4 class="text-xl text-gray-700 mb-4">Pour s'entraîner avec efficacité pendant les vacances !</h4>
-                    <p class="text-gray-600">
+                    <p class="text-gray-700">
                         A chaque vacances scolaires, Maboum School met en place des stages intensifs de révisions. L'objectif ? Remettre à niveau les étudiants dans le besoin, garder un rythme d'étude soutenu ou encore prendre de l'avance sur les devoirs ! Nos stages de révision proposent 10h de cours par matière pendant une semaine pour travailler vos matières en profondeur.
                     </p>
                 </div>
@@ -164,17 +200,17 @@
             <div class="border-t border-gray-300 my-12"></div>
             
             <!-- Cours Hebdomadaires -->
-            <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-12" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-16" data-aos="fade-up">
                 <div class="md:w-1/2">
                     <img src="../img/courshebdo.png" alt="Cours hebdomadaires" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2">
                     <div class="flex items-center mb-2">
-                        <h3 class="text-3xl font-bold text-gray-900">Cours</h3>
-                        <h3 class="text-3xl font-bold text-primary-600 ml-2">Hebdomadaires</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Cours</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary-600 ml-2">Hebdomadaires</h3>
                     </div>
                     <h4 class="text-xl text-gray-700 mb-4">Pour s'entraîner tout au long de l'année !</h4>
-                    <p class="text-gray-600">
+                    <p class="text-gray-700">
                         Nos cours hebdomadaires vous permettront de travailler durant toute l'année scolaire sur une ou plusieurs matières, en personnalisé ou collectivement. Nos cours hebdomadaires ont lieux une à deux fois par semaine.
                     </p>
                 </div>
@@ -183,17 +219,17 @@
             <div class="border-t border-gray-300 my-12"></div>
             
             <!-- Coaching Scolaire -->
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-12" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-16" data-aos="fade-up">
                 <div class="md:w-1/2">
                     <img src="../img/orientation.png" alt="Coaching scolaire" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2">
                     <div class="flex items-center mb-2">
-                        <h3 class="text-3xl font-bold text-gray-900">Coaching</h3>
-                        <h3 class="text-3xl font-bold text-primary-600 ml-2">Scolaire</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Coaching</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary-600 ml-2">Scolaire</h3>
                     </div>
                     <h4 class="text-xl text-gray-700 mb-4">Accompagner les étudiants dans leur futur !</h4>
-                    <p class="text-gray-600">
+                    <p class="text-gray-700">
                         Maboum School aide les élèves à réfléchir sur leurs ambitions, leurs centres d'intérêt, leurs qualifications et leurs compétences, à comprendre le marché du travail et les systèmes éducatifs et à articuler cette information avec la connaissance qu'elles ont d'elles-mêmes.
                     </p>
                 </div>
@@ -208,11 +244,11 @@
                 </div>
                 <div class="md:w-1/2">
                     <div class="flex items-center mb-2">
-                        <h3 class="text-3xl font-bold text-gray-900">Cours</h3>
-                        <h3 class="text-3xl font-bold text-primary-600 ml-2">En ligne</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Cours</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary-600 ml-2">En ligne</h3>
                     </div>
                     <h4 class="text-xl text-gray-700 mb-4">Pour apprendre partout !</h4>
-                    <p class="text-gray-600">
+                    <p class="text-gray-700">
                         Maboum School vous propose aussi des cours en ligne individuelles ou collectifs pour enseigner depuis n'importe où.
                     </p>
                 </div>
@@ -221,9 +257,9 @@
     </section>
 
     <!-- Section Notre Expérience -->
-    <section id="notre-experience" class="py-20">
+    <section id="notre-experience" class="py-20 section-spacing">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-primary-900 mb-12">Notre expérience</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12">Notre expérience</h2>
             
             <!-- Nos enseignants -->
             <div class="mb-20">
@@ -234,10 +270,10 @@
                     </div>
                     <div class="md:w-1/2">
                         <h4 class="text-2xl font-bold text-primary-900 mb-4">Des professeurs compétents</h4>
-                        <p class="text-gray-600 mb-4">
+                        <p class="text-gray-700 mb-4">
                             Votre enfant a besoin d'une attention particulière et souhaite travailler en prenant le temps de revenir sur des points ou des notions précises du programme scolaire ? Habitués à travailler avec des élèves, nos professeurs de l'Education Nationale sauront répondre à leurs attentes.
                         </p>
-                        <p class="text-gray-600">
+                        <p class="text-gray-700">
                             Ils sauront accompagner et guider vos enfants de la meilleure des manières et le plus efficacement possible.
                         </p>
                     </div>
@@ -254,23 +290,23 @@
                     <div class="md:w-1/2">
                         <h4 class="text-2xl font-bold text-primary-900 mb-4">Retour des élèves et des parents</h4>
                         <div class="space-y-4">
-                            <blockquote class="italic text-gray-600 border-l-4 border-primary-600 pl-4">
+                            <blockquote class="italic text-gray-700 border-l-4 border-primary-600 pl-4">
                                 "J'ai gagné deux points sur ma moyenne de maths après avoir effectué un stage chez Maboum School en février"
                                 <footer class="text-right font-semibold">- Kimillia</footer>
                             </blockquote>
-                            <blockquote class="italic text-gray-600 border-l-4 border-primary-600 pl-4">
+                            <blockquote class="italic text-gray-700 border-l-4 border-primary-600 pl-4">
                                 "Moi j'ai vu ma moyenne passer de 8 à 10,5 grâce au stage intensif que j'ai fait chez Maboum School"
                                 <footer class="text-right font-semibold">- Soussana</footer>
                             </blockquote>
-                            <blockquote class="italic text-gray-600 border-l-4 border-primary-600 pl-4">
+                            <blockquote class="italic text-gray-700 border-l-4 border-primary-600 pl-4">
                                 "Mon enfant a doublé sa moyenne grâce à Maboum School, je vous le conseille"
                                 <footer class="text-right font-semibold">- Zahra</footer>
                             </blockquote>
-                            <blockquote class="italic text-gray-600 border-l-4 border-primary-600 pl-4">
+                            <blockquote class="italic text-gray-700 border-l-4 border-primary-600 pl-4">
                                 "La rentrée s'est bien déroulée comme d'habitude grâce aux stages que nos enfants passent avec vous. Une fois de plus, mon fils reprend les bancs de l'école confiant et sûr de lui. Merci pour cet accompagnement. C'est toujours un plaisir de vous revoir."
                                 <footer class="text-right font-semibold">- Halya</footer>
                             </blockquote>
-                            <blockquote class="italic text-gray-600 border-l-4 border-primary-600 pl-4">
+                            <blockquote class="italic text-gray-700 border-l-4 border-primary-600 pl-4">
                                 "Très bonne école de soutien. Mon fils reussi a augmenter sa moyenne considérablement et a gagné en confiance en lui."
                                 <footer class="text-right font-semibold">- Sabrina</footer>
                             </blockquote>
@@ -296,33 +332,33 @@
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-20 bg-gray-50 section-spacing">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-primary-900 mb-12">Contact</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12">Contact</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up">
                     <div class="flex justify-center mb-4">
-                        <img src="../img/imgadresse.png" alt="Adresse" class="w-16 h-16">
+                        <img src="../img/imgadresse.png" alt="Adresse" class="w-12 h-12 object-contain">
                     </div>
                     <h3 class="text-xl font-bold text-primary-900 mb-2">Adresse du siège</h3>
-                    <p class="text-gray-600">69 rue Jules Watteeuw, Roubaix</p>
+                    <p class="text-gray-700">69 rue Jules Watteeuw, Roubaix</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex justify-center mb-4">
-                        <img src="../img/imgtelephone.png" alt="Téléphone" class="w-16 h-16">
+                        <img src="../img/imgtelephone.png" alt="Téléphone" class="w-12 h-12 object-contain">
                     </div>
                     <h3 class="text-xl font-bold text-primary-900 mb-2">Téléphone</h3>
-                    <p class="text-gray-600">06 22 11 89 32</p>
+                    <p class="text-gray-700">06 22 11 89 32</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex justify-center mb-4">
-                        <img src="../img/imgmail.png" alt="Email" class="w-16 h-16">
+                        <img src="../img/imgmail.png" alt="Email" class="w-12 h-12 object-contain">
                     </div>
                     <h3 class="text-xl font-bold text-primary-900 mb-2">Adresse mail</h3>
-                    <p class="text-gray-600">direction.pedagogique@maboum-school.fr</p>
+                    <p class="text-gray-700">direction.pedagogique@maboum-school.fr</p>
                 </div>
             </div>
             
@@ -439,11 +475,22 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
             AOS.init({
                 duration: 1000,
                 once: true,
                 offset: 100
             });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
             
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -454,12 +501,30 @@
                     const targetElement = document.querySelector(targetId);
                     
                     if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
                         window.scrollTo({
-                            top: targetElement.offsetTop - 100,
+                            top: targetPosition,
                             behavior: 'smooth'
                         });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
                     }
                 });
+            });
+            
+            // Add shadow to header on scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
             });
         });
     </script>

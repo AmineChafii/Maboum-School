@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réinitialisation du mot de passe - Maboum School</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="../dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-sans">
     <div class="min-h-screen flex flex-col">
         <!-- Header -->
-        <header class="bg-primary-900 text-white">
+        <header class="bg-primary-900 text-white fixed w-full z-50">
             <nav class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <a href="index.php" class="flex items-center">
                         <img src="../img/logo3.jpg" alt="Maboum School" class="h-12">
+                        <span class="text-white text-xl font-bold ml-3">Maboum School</span>
                     </a>
                     <div class="flex items-center space-x-4">
                         <a href="Login.php" class="text-white hover:text-secondary-200 transition">Connexion</a>
@@ -24,11 +25,11 @@
         </header>
 
         <!-- Main Content -->
-        <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-28">
             <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow-lg">
                 <div>
                     <h2 class="text-center text-3xl font-bold text-primary-900">Réinitialisation du mot de passe</h2>
-                    <p class="mt-2 text-center text-sm text-gray-600">
+                    <p class="mt-2 text-center text-sm text-gray-700">
                         Choisissez votre nouveau mot de passe
                     </p>
                 </div>
