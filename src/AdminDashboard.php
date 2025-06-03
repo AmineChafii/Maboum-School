@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tableau de bord d'Administrateur - Maboum School</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="../dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   <style>
     .sticky-header {
@@ -44,12 +42,20 @@
       background-color: #dc2626;
       border-color: #dc2626;
     }
+    .table th {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      font-weight: 600;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 font-sans">
   <!-- Header -->
-  <header class="sticky-header bg-primary-900 text-white">
+  <header class="sticky-header bg-primary-900 text-white shadow-md">
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <a href="../view/index.php" class="flex items-center">
@@ -64,66 +70,59 @@
   </header>
 
   <div class="container mx-auto px-4 py-8 pt-28">
-    <div class="row mt-4">
-      <div class="col-lg-12 d-flex justify-content-between align-items-center">
-        <div>
-          <h1 class="text-3xl font-bold text-primary-900">Tous les clients</h1>
-        </div>
-        <div>
-          <button class="bg-secondary-600 text-white px-6 py-3 rounded-full hover:bg-secondary-700 transition" type="button" data-toggle="modal" data-target="#addNewUserModal">Ajouter un nouveau client</button>
-        </div>
-      </div>
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold text-primary-900">Gestion des clients</h1>
+      <button 
+        class="bg-secondary-600 text-white px-6 py-3 rounded-full hover:bg-secondary-700 transition shadow-md"
+        type="button" 
+        data-toggle="modal" 
+        data-target="#addNewUserModal">
+        Ajouter un nouveau client
+      </button>
     </div>
-    <hr>
-    <div class="row">
-      <div class="col-lg-12">
-        <div id="showAlert"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="table-responsive">
-            <table class="table table-striped table-bordered text-center">
-              <thead class="bg-gray-50">
-                <tr>
-                  <th>ID</th>
-                  <th>Nom</th>
-                  <th>Prénom</th>
-                  <th>Etablissement</th>
-                  <th>Classe</th>
-                  <th>Representant</th>
-                  <th>Téléphone</th>
-                  <th>Adresse</th>
-                  <th>Complement</th>
-                  <th>Code Postal</th>
-                  <th>Ville</th>
-                  <th>Email</th>
-                  <th>Type de soutien</th>
-                  <th>Matière</th>
-                  <th>Campus</th>
-                  <th>Heures payées</th>
-                  <th>Heures Restantes</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Data will be loaded here -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+    
+    <div id="showAlert" class="my-4"></div>
+    
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="table table-striped table-bordered text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Etablissement</th>
+              <th>Classe</th>
+              <th>Representant</th>
+              <th>Téléphone</th>
+              <th>Adresse</th>
+              <th>Complement</th>
+              <th>Code Postal</th>
+              <th>Ville</th>
+              <th>Email</th>
+              <th>Type de soutien</th>
+              <th>Matière</th>
+              <th>Campus</th>
+              <th>Heures payées</th>
+              <th>Heures Restantes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Les données seront chargées ici par AJAX -->
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 
   <!-- Add New User Modal Start -->
   <div class="modal fade" tabindex="-1" id="addNewUserModal">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-primary-900 text-white">
           <h5 class="modal-title">Ajouter un nouveau client</h5>
-          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form id="add-user-form" class="p-2" novalidate>
@@ -216,11 +215,11 @@
 
             <div class="row mb-3 gx-3">
               <div class="col">
-                <label for="heurep" class="form-label">Heure payées</label>
+                <label for="heurep" class="form-label">Heures payées</label>
                 <input type="text" name="heurep" class="form-control form-control-lg">
               </div>
               <div class="col">
-                <label for="heure" class="form-label">Heure restantes</label>
+                <label for="heure" class="form-label">Heures restantes</label>
                 <input type="text" name="heure" class="form-control form-control-lg">
               </div>
             </div>
@@ -237,11 +236,11 @@
 
   <!-- Edit User Modal Start -->
   <div class="modal fade" tabindex="-1" id="editUserModal">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Informations sur le client</h5>
-          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header bg-primary-900 text-white">
+          <h5 class="modal-title">Modifier les informations du client</h5>
+          <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form id="edit-user-form" class="p-2" novalidate>
@@ -269,7 +268,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="class">Classe</label>
+              <label for="classe">Classe</label>
               <input type="text" name="classe" id="classe" class="form-control form-control-lg">
             </div>
 
@@ -320,11 +319,11 @@
 
             <div class="row mb-3 gx-3">
               <div class="col">
-                <label for="heurep" class="form-label">Heure payées</label>
+                <label for="heurep" class="form-label">Heures payées</label>
                 <input type="text" name="heurep" id="heurep" class="form-control form-control-lg">
               </div>
               <div class="col">
-                <label for="heure" class="form-label">Heure restantes</label>
+                <label for="heure" class="form-label">Heures restantes</label>
                 <input type="text" name="heure" id="heure" class="form-control form-control-lg">
               </div>
             </div>
@@ -348,5 +347,4 @@
 
   <script src="../Js/main.js"></script>
 </body>
-
 </html>
